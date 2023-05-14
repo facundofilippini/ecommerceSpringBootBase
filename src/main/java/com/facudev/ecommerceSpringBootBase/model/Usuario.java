@@ -1,7 +1,15 @@
 package com.facudev.ecommerceSpringBootBase.model;
 
+import jakarta.persistence.*;
+
+import java.util.List;
+
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
 
+    @Id // defino la primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //es para hacerlo autoincremental
     private Integer id;
     private String nombre;
     private String username;
@@ -10,6 +18,14 @@ public class Usuario {
     private String telefono;
     private String tipo;
     private String password;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Producto> productos;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Orden> ordenes;
+
+
 
     public Usuario(Integer id, String nombre, String username, String email, String direccion, String telefono, String tipo, String password) {
         this.id = id;

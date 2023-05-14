@@ -1,12 +1,20 @@
 package com.facudev.ecommerceSpringBootBase.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "detalle_ordenes")
 public class DetalleOrden {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
     private double cantidad;
     private double precio;
     private double total;
+
+
 
     public DetalleOrden(Integer id, String nombre, double cantidad, double precio, double total) {
         this.id = id;
