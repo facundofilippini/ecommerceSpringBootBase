@@ -92,4 +92,7 @@ public class Producto {
                 ", cantidad=" + cantidad +
                 '}';
     }
+
+    public void setUsuario(Usuario usuario) {
+    }
 }

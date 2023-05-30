@@ -6,37 +6,34 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @Controller
-@RequestMapping("/administrador")
-public class AdministradorController {
+@RequestMapping("/")
+public class IndexController {
 
-    private Logger logg = LoggerFactory.getLogger(AdministradorController.class);
+    private Logger logg = LoggerFactory.getLogger(IndexController.class);
 
     @GetMapping("")
     public String home() {
-        return "administrador/home";
+        return "index";
     }
 
-    @GetMapping("/producto")
-    public String itemDetail() {
+    @GetMapping("producto")
+    public String itemdetail() {
         return "pages/itemdetail";
     }
 
-    @GetMapping("/usuarios")
-    public String users() {
-        return "pages/users";
+    @GetMapping("/carrito")
+    public String getCart() {
+        return "pages/cart";
     }
 
-    @GetMapping("/ordenes")
-    public String order() {
-        return "pages/order";
-    }
-
-    @GetMapping("/detalleorden")
+    @GetMapping("/orden")
     public String orderdetail() {
         return "pages/orderdetail";
     }
 
-
+    @GetMapping("/guardarorden")
+    public String saveOrder() {
+        return "redirect:/";
+    }
 }
