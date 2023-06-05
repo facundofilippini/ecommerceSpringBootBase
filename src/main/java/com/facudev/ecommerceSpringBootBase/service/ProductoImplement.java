@@ -31,11 +31,12 @@ public class ProductoImplement implements ProductoService {
 
     @Override
     public void delete(Integer id) {
+        productoRepository.deleteById(id);
 
     }
 
     @Override
     public List<Producto> findAll() {
-        return null;
+        return productoRepository.findAll();
     }
 }
