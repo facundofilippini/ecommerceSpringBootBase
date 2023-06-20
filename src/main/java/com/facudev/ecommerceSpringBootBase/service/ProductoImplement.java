@@ -21,13 +21,15 @@ public class ProductoImplement implements ProductoService {
 
     @Override
     public Optional<Producto> get(Integer id) {
-        return Optional.empty();
+        return productoRepository.findById(id);
     }
 
     @Override
     public void update(Producto producto) {
+        productoRepository.save(producto);
 
     }
+
 
     @Override
     public void delete(Integer id) {

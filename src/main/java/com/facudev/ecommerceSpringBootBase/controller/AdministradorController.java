@@ -1,20 +1,26 @@
 package com.facudev.ecommerceSpringBootBase.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.facudev.ecommerceSpringBootBase.model.Producto;
+import com.facudev.ecommerceSpringBootBase.repository.ProductoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 
 @Controller
 @RequestMapping("/administrador")
 public class AdministradorController {
 
-    private Logger logg = LoggerFactory.getLogger(AdministradorController.class);
+    @Autowired
+    private ProductoRepository productoService;
 
     @GetMapping("")
-    public String home() {
+    public String home(Model home) {
+        List<Producto> productos = productoService.findAll();
         return "administrador/home";
     }
 
