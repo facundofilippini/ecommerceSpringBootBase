@@ -52,7 +52,7 @@ public class ProductoController {
             String imagename = uploadFileService.saveImage(file);
             producto.setImagen(imagename);
         }
-
+        LOGGER.info("Producto: {}", producto);
         productoService.update(producto);
         return "redirect:/productos";
     }
@@ -83,8 +83,8 @@ public class ProductoController {
         Usuario usuario = new Usuario(001, "Facundo", "facundofilippini", "filippinifacundo@gmail.com", "Mendoza", "2614601523", "ADMIN", "123456");
         producto.setUsuario(usuario);
         if (producto.getId() == null) {
-            String imagename = uploadFileService.saveImage(file);
-            producto.setImagen(imagename);
+            String imageName = uploadFileService.saveImage(file);
+            producto.setImagen(imageName);
         }
         productoService.create(producto);
         return "redirect:/productos";

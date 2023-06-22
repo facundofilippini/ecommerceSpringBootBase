@@ -6,15 +6,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Spring eCommerce</title>
-    <div th:replace="components/Animations/bootstrap :: bootstraplink"></div>
+    <div th:replace="~{components/Animations/bootstrap :: bootstraplink}"></div>
 </head>
 <body>
-<div th:replace="components/NavBar/navbaradmin.html :: navbaradmin"></div>
+<div th:replace="~{components/NavBar/navbaradmin.html :: navbaradmin}"></div>
 <div class="container">
-    <div th:replace="components/Header/headeradmin.html :: headeradmin"></div>
-    <div th:replace="components/Item/itemscatalogue.html :: itemcatalogue"></div>
+    <div th:replace="~{components/Header/headeradmin.html :: headeradmin}"></div>
+    <div th:replace="~{components/Item/itemscatalogue.html :: itemcatalogue}"></div>
 </div>
-<div th:replace="components/Footer/footer :: footer"></div>
-<div th:replace="components/Animations/bootstrap :: bootstrapcontext"></div>
+<div th:replace="~{components/Footer/footer :: footer}"></div>
+<div th:replace="~{components/Animations/bootstrap :: bootstrapcontext}"></div>
 </body>
 </html>

@@ -19,8 +19,9 @@ public class AdministradorController {
     private ProductoRepository productoService;
 
     @GetMapping("")
-    public String home(Model home) {
+    public String home(Model model) {
         List<Producto> productos = productoService.findAll();
+        model.addAttribute("productos", productos);
         return "administrador/home";
     }
 
